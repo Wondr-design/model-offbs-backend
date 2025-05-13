@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: offbs-backend
+    env: node
+    plan: free
+    rootDir: server
+    buildCommand: |
+      corepack enable
+      corepack prepare pnpm@latest --activate
+      pnpm install
+    startCommand: pnpm start
+    envVars:
+      - key: NODE_ENV
+        value: production
