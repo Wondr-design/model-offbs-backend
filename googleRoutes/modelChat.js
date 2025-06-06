@@ -11,7 +11,7 @@ const initChat = (initialPrompt) => {
   });
 
   chat = ai.chats.create({
-    model: "gemini-2.0-flash",
+    model: "gemma-3-12b-it",
     history,
   });
 };

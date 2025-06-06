@@ -3,7 +3,7 @@ import { ai } from "../clients/googleClients.js";
 export const generateContent = async (prompt) => {
   try {
     const response = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
+      model: "gemma-3-12b-it",
       contents: prompt,
     });
     return response.text;
