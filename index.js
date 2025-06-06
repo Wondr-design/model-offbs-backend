@@ -9,8 +9,9 @@ app.use(bodyParser.json());
 
 app.use(cors({ origin: ["https://model.offbs.com", "http://localhost:5173"] }));
 
-app.listen(process.env.PORT || 9090, () => {
-  console.log(`Server is running on port ${process.env.PORT || 9090}`);
+const PORT = process.env.PORT || 3000; // match Dockerfile
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
 });
 
 //Routes
