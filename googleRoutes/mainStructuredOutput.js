@@ -42,11 +42,19 @@ export const mainStructuredOutput = async (prompt) => {
     // console.debug(response.text);
     const result = response.text;
     console.log(result);
-    const jsonObj = JSON.parse(result);
+
+    let jsonObj;
+    try {
+      jsonObj = JSON.parse(result);
+    } catch (parseErr) {
+      console.error("Failed to parse JSON:", result);
+      throw parseErr;
+    }
+
     console.log(jsonObj);
     return jsonObj;
   } catch (error) {
-    console.error("API error:", error);
+    console.error("API error:", error.response || error.message || error);
     throw error;
   }
 };
