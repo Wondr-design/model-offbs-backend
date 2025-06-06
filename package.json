@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "backend for modelchat",
   "version": "1.0.0",
   "description": "",
   "type": "module",
@@ -9,7 +9,7 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Wondr Crown",
   "license": "ISC",
   "packageManager": "pnpm@10.9.0",
   "dependencies": {
@@ -20,6 +20,7 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10",
     "nodemon": "^3.1.10"
   }
 }

@@ -7,7 +7,7 @@ import { main } from "./googleRoutes/modelChat.js";
 const app = express();
 app.use(bodyParser.json());
 
-app.use(cors({ origin: "https://model.offbs.com" }));
+app.use(cors({ origin: ["https://model.offbs.com", "http://localhost:5173"] }));
 
 app.listen(process.env.PORT || 9090, () => {
   console.log(`Server is running on port ${process.env.PORT || 9090}`);
