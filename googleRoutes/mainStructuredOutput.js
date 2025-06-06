@@ -4,7 +4,7 @@ import { Type } from "@google/genai";
 export const mainStructuredOutput = async (prompt) => {
   try {
     const response = await ai.models.generateContent({
-      model: "gemma-3-12b-it",
+      model: "gemini-2.0-flash",
       contents: prompt,
       config: {
         responseMimeType: "application/json",
