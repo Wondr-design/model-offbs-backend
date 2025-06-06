@@ -4,6 +4,7 @@ import cors from "cors";
 import { generateContent } from "./googleRoutes/textGenerateRoute.js";
 import { main } from "./googleRoutes/modelChat.js";
 import { generateStructuredOutputText } from "./googleRoutes/textStructuredOutput.js";
+import { mainStructuredOutput } from "./googleRoutes/mainStructuredOutput.js";
 
 const app = express();
 app.use(bodyParser.json());
@@ -56,6 +57,19 @@ app.post("/googleai/textstructured", async (req, res) => {
   try {
     const prompt = req.body.prompt;
     const response = await generateStructuredOutputText(prompt);
+    res.send(response);
+  } catch (error) {
+    console.error("API error:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// Main Structured output generation
+
+app.post("/googleai/mainstructured", async (req, res) => {
+  try {
+    const prompt = req.body.prompt;
+    const response = await mainStructuredOutput(prompt);
     res.send(response);
   } catch (error) {
     console.error("API error:", error);
